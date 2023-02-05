@@ -8,8 +8,12 @@ import java.util.Random;
  *
  */
 public class Vault {
-	private int secret = new Random().nextInt(1000001);
-
+	private static int secret = new Random().nextInt(1000001);
+	public static void main(String[] args) {
+		Vault vault = new Vault();
+		vault.tryCode(0);
+		System.out.print(secret);
+	}
 	/**
 	 * Tries to access the vault
 	 * 

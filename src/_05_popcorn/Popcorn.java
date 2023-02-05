@@ -1,5 +1,7 @@
 package _05_popcorn;
 
+import javax.swing.JOptionPane;
+
 /*
  *    Copyright (c) The League of Amazing Programmers 2013-2019
  *    Level 1
@@ -12,7 +14,19 @@ package _05_popcorn;
  * Ask the user for the flavor of the popcorn and the number of minutes to cook it.
  * Don't change the existing methods.
  */
-
+class PopcornMaker{
+	public static void main(String[] args) {
+		String flavor = JOptionPane.showInputDialog("what popcorn flavor do you want");
+		Popcorn pc = new Popcorn(flavor);
+		String cookLength = JOptionPane.showInputDialog("how long do you want me to cook it (say the number in minutes and don't put any letters)");
+		
+		Microwave mv = new Microwave();
+		mv.putInMicrowave(pc);
+		mv.setTime(Integer.parseInt(cookLength));
+		mv.startMicrowave();
+		pc.eat();
+	}
+}
 class Microwave {
 	private int cookTime;
 	Popcorn thingToBeCooked;
@@ -37,6 +51,10 @@ class Microwave {
 		} else {
 			for (int i = 0; i < cookTime * 10 + 1; i++) {
 				thingToBeCooked.applyHeat();
+				if (i>70) {
+					JOptionPane.showMessageDialog(null, "welp, the popcorn fully burned");
+					break;
+				}
 			}
 			thingToBeCooked.eat();
 		}
@@ -52,6 +70,10 @@ public class Popcorn {
 	Popcorn(String flavor) {
 		this.flavor = flavor;
 		System.out.println("Popcorn says: making package of " + this.flavor + " popcorn.");
+	}
+
+	public Popcorn() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public void eat() {
