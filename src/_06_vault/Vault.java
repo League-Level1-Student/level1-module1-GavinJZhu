@@ -17,10 +17,10 @@ public class Vault {
 	/**
 	 * Tries to access the vault
 	 * 
-	 * @param guess the code being attempted
-	 * @return true if the guess matches the code, false otherwise
+	 * @param key the code being attempted
+	 * @return true if the key matches the code, false otherwise
 	 */
-	public boolean tryCode(int guess) {
-		return guess == secret;
+	public boolean tryCode(int key) {
+		return key == secret;
 	}
 }

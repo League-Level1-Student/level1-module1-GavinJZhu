@@ -1,6 +1,6 @@
 package _04_harry_potter;
 
-public class harryRunner {
+public class HarryRunner {
 public static void main(String[] args) {
 	HarryPotter hp = new HarryPotter();
 	hp.makeInvisible(true);
