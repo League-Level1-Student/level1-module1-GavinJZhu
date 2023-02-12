@@ -5,9 +5,11 @@ public class Duck {
     String favoriteFood;
 
     void quack() {
+    	System.out.println("quack");
     }
 
     void waddle() {
+    	System.out.println("We have "+numberOfFriends+" people in my basement");
     }
 
     Duck(String favoriteFood, int numberOfFriends) {
