@@ -9,7 +9,7 @@ public class Duck {
     }
 
     void waddle() {
-    	System.out.println("We have "+numberOfFriends+" people in my basement");
+    	System.out.println("I have 4 people in my basement :)");
     }
 
     Duck(String favoriteFood, int numberOfFriends) {

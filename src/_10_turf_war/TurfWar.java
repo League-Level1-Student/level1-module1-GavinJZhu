@@ -7,10 +7,8 @@ import processing.core.PApplet;
 public class TurfWar extends PApplet {
 
     class Player {
-        /*
-         * 1. Create a constructor for Player that takes all these variables in
-         * as parameters and initializes them using the this keyword.
-         */
+
+
         int x;
         int y;
         int speed;
@@ -20,7 +18,6 @@ public class TurfWar extends PApplet {
         int leftKey;
         int downKey;
         int rightKey;
-
         /*
          * The member variables below do not need to be initialized in the
          * constructor.
@@ -31,12 +28,29 @@ public class TurfWar extends PApplet {
         boolean moveRight = false;
         int pixelCount = 0;
 
+       // Player player = new Player(x,y, speed, playerSize, playerColor,upKey,leftKey,downKey,rightKey);
+       /*
+        * 1. Create a constructor for Player that takes all these variables in
+        * as parameters and initializes them using the this keyword.
+        */
+        Player(int xx,int yy, int sspeed,int pplayerSize,int pplayerColor,int uupKey, int lleftKey,int ddownKey,int rrightKey){
+            this.x = xx;
+            this.y = yy;
+            this.speed = sspeed;
+            this.playerSize = pplayerSize;
+            this.playerColor = pplayerColor;
+            this.upKey = uupKey;
+            this.leftKey = lleftKey;
+            this.downKey = ddownKey;
+            this.rightKey = rrightKey;
+        }
         void drawPlayer() {
             /*
-             * 2. Draw a rectangle to represent the the Player using its color,
+             * 2. Draw a rectangle to represent the Player using its color,
              * coordinates and size.
              */
-            
+           size(750, 750);
+
         }
 
         void update() {
