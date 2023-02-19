@@ -1,10 +1,4 @@
-package _10_turf_war;
-
 import java.awt.Color;
-
-import processing.core.PApplet;
-
-public class TurfWar extends PApplet {
 
     class Player {
 
@@ -73,13 +67,13 @@ public class TurfWar extends PApplet {
              * other directions.
              */
             if (moveDown&& y > statsBoardLine) {
-            	y+=speed;
+              y+=speed;
             }
             if (moveLeft&& x > 0) {
-            	x-=speed;
+              x-=speed;
             }
             if (moveRight && x < 300) {
-            	x+=speed;
+              x+=speed;
             }
             
         }
@@ -152,7 +146,7 @@ public class TurfWar extends PApplet {
     @Override
     public void settings() {
         // 5. Set the size for your sketch. Make it at least 300x300.
-       size(300,300);
+       size(1000,1000);
     }
 
     @Override
@@ -264,7 +258,7 @@ public class TurfWar extends PApplet {
 displayStats();
         // 14. If gameOver is true call the endGame method.
 if(gameOver) {
-	endGame();
+  endGame();
 }
     }
 
@@ -274,8 +268,8 @@ if(gameOver) {
          * 15. Call the enableMovement method for both players and pass keyCode
          * to the method.
          */        
-    	player1.enableMovement(keyCode);
-    	player2.enableMovement(keyCode);
+      player1.enableMovement(keyCode);
+      player2.enableMovement(keyCode);
     }
 
     @Override
@@ -284,8 +278,8 @@ if(gameOver) {
          * 16. Call the disableMovement method for both players and pass keyCode
          * to the method.
          */
-    	player1.disableMovement(keyCode);
-    	player2.disableMovement(keyCode);
+      player1.disableMovement(keyCode);
+      player2.disableMovement(keyCode);
     }
 
     /*
@@ -296,8 +290,3 @@ if(gameOver) {
 
     // Challenge: Try to add more players to the game. If you need to figure out
     // additional keycodes for controls try using https://keycode.info/
-
-    static public void main(String[] args) {
-        PApplet.main(TurfWar.class.getName());
-    }
-}
