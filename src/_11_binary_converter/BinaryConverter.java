@@ -9,21 +9,32 @@ public class BinaryConverter implements ActionListener {
     JPanel panel = new JPanel();
     JButton button = new JButton();
     JTextField answer = new JTextField(20);
+    JButton reset = new JButton();
+    JLabel label = new JLabel();
 
     public void main() {
         frame.add(panel);
         panel.add(answer);
         panel.add(button);
+        panel.add(reset);
         frame.setVisible(true);
         button.setText("Convert");
+        reset.setText("Reset Text");
         frame.pack();
-        convert();
+        button.addActionListener(this);
+        reset.addActionListener(this);
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-
-
-
+ if(e.getSource()==button) {
+	 label.setText(label.getText()+convert(answer.getText()));
+ 	panel.add(label);
+ 	frame.add(panel);
+ 	frame.pack();
+ }
+    	if(e.getSource()==reset) {
+    		label.setText(" ");
+    	}
     }
 
     String convert(String input) {
